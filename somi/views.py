@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
+from .models import Images
 # Create your views here.
 
-def post_list(request):
-	return render(request,'somi/post_list.html',{})
+def image_list(request):
+	images=Images.objects.all()
+	return render(request,'somi/image_list.html',{'images':images})
