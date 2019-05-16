@@ -1,3 +1,6 @@
+{% load staticfiles %}
+
+
 <html>
 	<head>
 		<title> Somi </title>
@@ -7,11 +10,12 @@
 		<p>This is a reminiscence related to different peoples and trips you've had !!</p>
 		<p>Ready?</p>
 
-
+		 <img src="{% static 'somi/1.png' %}"  alt="dint load">
+ 
 		{% for image in images %}
 		<div>
-			<p>{{ image.title }}   </p><br><p>{{ image.photo.path }}   {{ image.photo.url }}</p>
-			<img src= "{{ image.photo.path }}"  alt="wait till it loads!" width="100" height="100">
+			<p>{{ image.title }}   </p>
+			<img src= "{{ image.photo.url }}"  alt="wait till it loads!" align="center">
 		</div>
 		{% endfor %}
 	</body>
